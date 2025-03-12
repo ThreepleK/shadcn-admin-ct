@@ -1,0 +1,9 @@
+div.text-sidebar-foreground {
+    & {}
+
+    /* 사이드 바, app-topbar 높이에 따라 위치와 높이 변경 */
+    & > div.sidebar-area {
+        top: 50px;
+        height: calc(100svh - 50px);
+    }
+}

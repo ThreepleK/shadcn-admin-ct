@@ -1,0 +1,87 @@
+/* 앱 상단 바 */
+.app-topbar {
+    & {
+        position: fixed;
+        z-index: 50;
+        left: 0;
+        top: 0;
+        right: 0;
+        height: 50px;
+        background: #343B4A;
+        display: grid;
+        grid-template-columns: var(--sidebar-width) 1fr;
+
+        transition: all 0.2s linear;
+    }
+
+    & > div {
+        display: flex;
+        align-items: center;
+    }
+
+    /* 왼쪽 */
+    & > .at-left {
+        & {
+            justify-content: center;
+        }
+
+        /* 로고 */
+        & > .logo {
+            display: inline-flex;
+            color: #fff;
+            font-size: 16px;
+            font-weight: bold;
+            width: 115px;
+            white-space: nowrap;
+        }
+    }
+
+    /* 오른쪽 */
+    & > .at-right {
+        justify-content: space-between;
+        padding: 0 15px;
+    }
+
+    /* 테마 변경 스위치 버튼 */
+    & button.theme-switch {
+        & {
+            color: #fff;
+            outline: none;
+        }
+
+        &:hover { background: #fff2; }
+    }
+
+    /* 검색 버튼 */
+    & button.search-input { background: #fff; }
+
+    /* 슬라이드 접힘 시 */
+    &[data-state="collapsed"] {
+        & {
+            grid-template-columns: calc(var(--sidebar-width-icon) + 16px) 1fr;
+            overflow: hidden;
+        }
+
+        /* 로고고 */
+        .at-left > .logo { width: 22px; }
+    }
+}
+
+#content {
+    padding-top: 50px;
+}
+
+/*
+    [다크모드]
+*/
+.dark {
+    & {}
+
+    /* 앱 상단 바 */
+    & .app-topbar {
+        & { background: #252630; }
+
+        /* 검색 버튼 */
+        & button.search-input { background: #1e293b40; }
+    }
+}
