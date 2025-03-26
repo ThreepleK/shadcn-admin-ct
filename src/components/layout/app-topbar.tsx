@@ -6,20 +6,18 @@ import { ProfileDropdown } from '@/components/profile-dropdown'
 import img_logoFull from '@/assets/logo.png'
 import img_logoMini from '@/assets/logo-mini.png'
 
-
 export function AppTopbar({...props}: React.ComponentProps<any>){
     const {state} = useSidebar();
 
-    const logo = (state: string): string => {
-        return state === 'collapsed' ? img_logoMini : img_logoFull;
-    }
+    const logo = state === 'collapsed' ? img_logoMini : img_logoFull;
+    const imgSize = state === 'collapsed' ? 22 : 115;
 
     return <>
         <div className='app-topbar' data-state={state}>
-            <div className="at-left">
-                <span className='logo'><img src={logo(state)} /></span>
+            <div className="flex items-center justify-center">
+                <span className={`inline-flex w-[${imgSize}px] whitespace-nowrap`}><img src={logo} /></span>
             </div>
-            <div className="at-right">
+            <div className="flex items-center justify-between px-4">
                 <SidebarTrigger variant='outline' className='scale-125 sm:scale-100' />
                 <div className='ml-auto flex items-center space-x-4'>
                     <Search />
