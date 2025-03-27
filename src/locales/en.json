@@ -15,7 +15,7 @@
             "Errors": "Errors",
             "Settings": "Settings",
             "Help Center": "Help Center",
-            "AG Grid": "AG Grid"
+            "AG Grid/Charts": "AG Grid/Charts"
         },
         "SubItems": {
             "Sign In": "Sign In",
@@ -34,7 +34,7 @@
             "Notifications": "Notifications",
             "Display": "Display",
             "Grid": "Grid",
-            "Chart": "Chart"
+            "Charts": "Charts"
         }
     }
 }

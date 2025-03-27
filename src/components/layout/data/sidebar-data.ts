@@ -141,7 +141,7 @@ export const sidebarData: SidebarData = {
           ],
         },
         {
-          title: 'AG Grid',
+          title: 'AG Grid/Charts',
           icon: IconGridPattern,
           items: [
             {
@@ -150,7 +150,7 @@ export const sidebarData: SidebarData = {
               icon: IconTableRow,
             },
             {
-              title: 'Chart',
+              title: 'Charts',
               url: '/aggrid/chart',
               icon: IconChartHistogram,
             },

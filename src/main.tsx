@@ -16,7 +16,8 @@ import './index.css'
 // Generated Routes
 import { routeTree } from './routeTree.gen'
 
-import './i18n'
+import './lib/i18n'
+import './lib/aggrid-reg-modules'
 
 const queryClient = new QueryClient({
   defaultOptions: {

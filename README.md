@@ -52,6 +52,13 @@ Install dependencies
   pnpm install
 ```
 
+To use AG Grid/Chart Enterprise features, install the ag-grid-enterprise package
+
+```bash
+  pnpm i ag-grid-enterprise
+  pnpm i ag-charts-enterprise
+```
+
 Start the server
 
 ```bash

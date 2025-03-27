@@ -7,7 +7,7 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
 import { useTranslation } from 'react-i18next'
-import { langList } from '@/i18n'
+import { langList } from '@/lib/i18n'
 
 export function LocationSwitch() {
   const { i18n } = useTranslation();
