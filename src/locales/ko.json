@@ -1,0 +1,37 @@
+{
+    "MAIN_MENUS": {
+        "Groups": {
+            "General": "기본",
+            "Pages": "페이지",
+            "Other": "기타"
+        },
+        "Items": {
+            "Dashboard": "대시보드",
+            "Tasks": "테스크",
+            "Apps": "앱",
+            "Chats": "채팅",
+            "Users": "사용자",
+            "Auth": "인증",
+            "Errors": "에러",
+            "Settings": "설정",
+            "Help Center": "도움말"
+        },
+        "SubItems": {
+            "Sign In": "로그인",
+            "Sign In (2 Col)": "로그인 (2 Col)",
+            "Sign Up": "회원가입",
+            "Forgot Password": "비번찾기",
+            "OTP": "OTP",
+            "Unauthorized": "401 에러",
+            "Forbidden": "403 에러",
+            "Not Found": "404 에러",
+            "Internal Server Error": "500 에러",
+            "Maintenance Error": "503 에러",
+            "Profile": "프로필",
+            "Account": "계정",
+            "Appearance": "상태",
+            "Notifications": "알림",
+            "Display": "디스플레이"
+        }
+    }
+}

@@ -1,6 +1,7 @@
 import { SidebarTrigger, useSidebar } from '@/components/ui/sidebar'
 import { Search } from '@/components/search'
 import { ThemeSwitch } from '@/components/theme-switch'
+import { LocationSwitch } from '@/components/location-switch'
 import { ProfileDropdown } from '@/components/profile-dropdown'
 
 import img_logoFull from '@/assets/logo.png'
@@ -19,9 +20,10 @@ export function AppTopbar({...props}: React.ComponentProps<any>){
             </div>
             <div className="flex items-center justify-between px-4">
                 <SidebarTrigger variant='outline' className='scale-125 sm:scale-100' />
-                <div className='ml-auto flex items-center space-x-4'>
+                <div className='ml-auto flex items-center space-x-2'>
                     <Search />
                     <ThemeSwitch />
+                    <LocationSwitch />
                     <ProfileDropdown />
                 </div>
             </div>

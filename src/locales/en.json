@@ -1,0 +1,37 @@
+{
+    "MAIN_MENUS": {
+        "Groups": {
+            "General": "General",
+            "Pages": "Pages",
+            "Other": "Other"
+        },
+        "Items": {
+            "Dashboard": "Dashboard",
+            "Tasks": "Task",
+            "Apps": "Apps",
+            "Chats": "Chats",
+            "Users": "Users",
+            "Auth": "Auth",
+            "Errors": "Errors",
+            "Settings": "Settings",
+            "Help Center": "Help Center"
+        },
+        "SubItems": {
+            "Sign In": "Sign In",
+            "Sign In (2 Col)": "Sign In (2 Col)",
+            "Sign Up": "Sign Up",
+            "Forgot Password": "Forgot Password",
+            "OTP": "OTP",
+            "Unauthorized": "Unauthorized",
+            "Forbidden": "Forbidden",
+            "Not Found": "Not Found",
+            "Internal Server Error": "Internal Server Error",
+            "Maintenance Error": "Maintenance Error",
+            "Profile": "Profile",
+            "Account": "Account",
+            "Appearance": "Appearance",
+            "Notifications": "Notifications",
+            "Display": "Display"
+        }
+    }
+}
