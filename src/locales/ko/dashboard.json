@@ -1,0 +1,29 @@
+{
+    "DASHBOARD": {
+        "Header": {
+            "Dashboard": "대시보드",
+            "Download": "다운로드"
+        },
+        "TabList": {
+            "Overview": "개요",
+            "Analytics": "분석",
+            "Reports": "보고서",
+            "Notifications": "알림"
+        },
+        "CardTitle": {
+            "Total Revenue": "총 수익",
+            "Subscriptions": "구독",
+            "Sales": "판매",
+            "Active Now": "활성화",
+            "Overview": "개요",
+            "Recent Sales": "최근 판매"
+        },
+        "CardDiscribe": {
+            "Total Revenue": "지난 달 대비 {{num}}",
+            "Subscriptions": "지난 달 대비 {{num}}",
+            "Sales": "지난 달 대비 {{num}}",
+            "Active Now": "지난 1시간 동안 {{num}}",
+            "Recent Sales": "당신은 이번 달에 {{num}}건의 판매를 달성했습니다."
+        }
+    }
+}

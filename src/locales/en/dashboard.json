@@ -1,0 +1,29 @@
+{
+    "DASHBOARD": {
+        "Header": {
+            "Dashboard": "Dashboard",
+            "Download": "Download"
+        },
+        "TabList": {
+            "Overview": "Overview",
+            "Analytics": "Analytics",
+            "Reports": "Reports",
+            "Notifications": "Notifications"
+        },
+        "CardTitle": {
+            "Total Revenue": "Total Revenue",
+            "Subscriptions": "Subscriptions",
+            "Sales": "Sales",
+            "Active Now": "Active Now",
+            "Overview": "Overview",
+            "Recent Sales": "Recent Sales"
+        },
+        "CardDiscribe": {
+            "Total Revenue": "{{num}} from last month",
+            "Subscriptions": "{{num}} from last month",
+            "Sales": "{{num}} from last month",
+            "Active Now": "{{num}} since last hour",
+            "Recent Sales": "You made {{num}} sales this month."
+        }
+    }
+}

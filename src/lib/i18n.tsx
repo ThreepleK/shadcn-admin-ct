@@ -1,12 +1,10 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next'
-
-import T_EN from '../locales/en.json'
-import T_KO from '../locales/ko.json'
+import { ko, en } from '../locales'
 
 const resources = {
-    en: { translation: T_EN },
-    ko: { translation: T_KO },
+    en: { translation: en },
+    ko: { translation: ko },
 };
 
 export const langList = [
