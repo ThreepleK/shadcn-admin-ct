@@ -52,6 +52,9 @@ const AuthenticatedChatsIndexLazyImport = createFileRoute(
 const AuthenticatedAppsIndexLazyImport = createFileRoute(
   '/_authenticated/apps/',
 )()
+const AuthenticatedAggridIndexLazyImport = createFileRoute(
+  '/_authenticated/aggrid/',
+)()
 const AuthenticatedSettingsNotificationsLazyImport = createFileRoute(
   '/_authenticated/settings/notifications',
 )()
@@ -63,6 +66,12 @@ const AuthenticatedSettingsAppearanceLazyImport = createFileRoute(
 )()
 const AuthenticatedSettingsAccountLazyImport = createFileRoute(
   '/_authenticated/settings/account',
+)()
+const AuthenticatedAggridGridIndexLazyImport = createFileRoute(
+  '/_authenticated/aggrid/grid/',
+)()
+const AuthenticatedAggridChartIndexLazyImport = createFileRoute(
+  '/_authenticated/aggrid/chart/',
 )()
 
 // Create/Update Routes
@@ -228,6 +237,15 @@ const AuthenticatedAppsIndexLazyRoute = AuthenticatedAppsIndexLazyImport.update(
   import('./routes/_authenticated/apps/index.lazy').then((d) => d.Route),
 )
 
+const AuthenticatedAggridIndexLazyRoute =
+  AuthenticatedAggridIndexLazyImport.update({
+    id: '/aggrid/',
+    path: '/aggrid/',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any).lazy(() =>
+    import('./routes/_authenticated/aggrid/index.lazy').then((d) => d.Route),
+  )
+
 const AuthenticatedSettingsNotificationsLazyRoute =
   AuthenticatedSettingsNotificationsLazyImport.update({
     id: '/notifications',
@@ -268,6 +286,28 @@ const AuthenticatedSettingsAccountLazyRoute =
     getParentRoute: () => AuthenticatedSettingsRouteLazyRoute,
   } as any).lazy(() =>
     import('./routes/_authenticated/settings/account.lazy').then(
+      (d) => d.Route,
+    ),
+  )
+
+const AuthenticatedAggridGridIndexLazyRoute =
+  AuthenticatedAggridGridIndexLazyImport.update({
+    id: '/aggrid/grid/',
+    path: '/aggrid/grid/',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any).lazy(() =>
+    import('./routes/_authenticated/aggrid/grid/index.lazy').then(
+      (d) => d.Route,
+    ),
+  )
+
+const AuthenticatedAggridChartIndexLazyRoute =
+  AuthenticatedAggridChartIndexLazyImport.update({
+    id: '/aggrid/chart/',
+    path: '/aggrid/chart/',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any).lazy(() =>
+    import('./routes/_authenticated/aggrid/chart/index.lazy').then(
       (d) => d.Route,
     ),
   )
@@ -402,6 +442,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedSettingsNotificationsLazyImport
       parentRoute: typeof AuthenticatedSettingsRouteLazyImport
     }
+    '/_authenticated/aggrid/': {
+      id: '/_authenticated/aggrid/'
+      path: '/aggrid'
+      fullPath: '/aggrid'
+      preLoaderRoute: typeof AuthenticatedAggridIndexLazyImport
+      parentRoute: typeof AuthenticatedRouteImport
+    }
     '/_authenticated/apps/': {
       id: '/_authenticated/apps/'
       path: '/apps'
@@ -444,6 +491,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedUsersIndexLazyImport
       parentRoute: typeof AuthenticatedRouteImport
     }
+    '/_authenticated/aggrid/chart/': {
+      id: '/_authenticated/aggrid/chart/'
+      path: '/aggrid/chart'
+      fullPath: '/aggrid/chart'
+      preLoaderRoute: typeof AuthenticatedAggridChartIndexLazyImport
+      parentRoute: typeof AuthenticatedRouteImport
+    }
+    '/_authenticated/aggrid/grid/': {
+      id: '/_authenticated/aggrid/grid/'
+      path: '/aggrid/grid'
+      fullPath: '/aggrid/grid'
+      preLoaderRoute: typeof AuthenticatedAggridGridIndexLazyImport
+      parentRoute: typeof AuthenticatedRouteImport
+    }
   }
 }
 
@@ -478,22 +539,29 @@ const AuthenticatedSettingsRouteLazyRouteWithChildren =
 interface AuthenticatedRouteRouteChildren {
   AuthenticatedSettingsRouteLazyRoute: typeof AuthenticatedSettingsRouteLazyRouteWithChildren
   AuthenticatedIndexRoute: typeof AuthenticatedIndexRoute
+  AuthenticatedAggridIndexLazyRoute: typeof AuthenticatedAggridIndexLazyRoute
   AuthenticatedAppsIndexLazyRoute: typeof AuthenticatedAppsIndexLazyRoute
   AuthenticatedChatsIndexLazyRoute: typeof AuthenticatedChatsIndexLazyRoute
   AuthenticatedHelpCenterIndexLazyRoute: typeof AuthenticatedHelpCenterIndexLazyRoute
   AuthenticatedTasksIndexLazyRoute: typeof AuthenticatedTasksIndexLazyRoute
   AuthenticatedUsersIndexLazyRoute: typeof AuthenticatedUsersIndexLazyRoute
+  AuthenticatedAggridChartIndexLazyRoute: typeof AuthenticatedAggridChartIndexLazyRoute
+  AuthenticatedAggridGridIndexLazyRoute: typeof AuthenticatedAggridGridIndexLazyRoute
 }
 
 const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
   AuthenticatedSettingsRouteLazyRoute:
     AuthenticatedSettingsRouteLazyRouteWithChildren,
   AuthenticatedIndexRoute: AuthenticatedIndexRoute,
+  AuthenticatedAggridIndexLazyRoute: AuthenticatedAggridIndexLazyRoute,
   AuthenticatedAppsIndexLazyRoute: AuthenticatedAppsIndexLazyRoute,
   AuthenticatedChatsIndexLazyRoute: AuthenticatedChatsIndexLazyRoute,
   AuthenticatedHelpCenterIndexLazyRoute: AuthenticatedHelpCenterIndexLazyRoute,
   AuthenticatedTasksIndexLazyRoute: AuthenticatedTasksIndexLazyRoute,
   AuthenticatedUsersIndexLazyRoute: AuthenticatedUsersIndexLazyRoute,
+  AuthenticatedAggridChartIndexLazyRoute:
+    AuthenticatedAggridChartIndexLazyRoute,
+  AuthenticatedAggridGridIndexLazyRoute: AuthenticatedAggridGridIndexLazyRoute,
 }
 
 const AuthenticatedRouteRouteWithChildren =
@@ -517,12 +585,15 @@ export interface FileRoutesByFullPath {
   '/settings/appearance': typeof AuthenticatedSettingsAppearanceLazyRoute
   '/settings/display': typeof AuthenticatedSettingsDisplayLazyRoute
   '/settings/notifications': typeof AuthenticatedSettingsNotificationsLazyRoute
+  '/aggrid': typeof AuthenticatedAggridIndexLazyRoute
   '/apps': typeof AuthenticatedAppsIndexLazyRoute
   '/chats': typeof AuthenticatedChatsIndexLazyRoute
   '/help-center': typeof AuthenticatedHelpCenterIndexLazyRoute
   '/settings/': typeof AuthenticatedSettingsIndexLazyRoute
   '/tasks': typeof AuthenticatedTasksIndexLazyRoute
   '/users': typeof AuthenticatedUsersIndexLazyRoute
+  '/aggrid/chart': typeof AuthenticatedAggridChartIndexLazyRoute
+  '/aggrid/grid': typeof AuthenticatedAggridGridIndexLazyRoute
 }
 
 export interface FileRoutesByTo {
@@ -541,12 +612,15 @@ export interface FileRoutesByTo {
   '/settings/appearance': typeof AuthenticatedSettingsAppearanceLazyRoute
   '/settings/display': typeof AuthenticatedSettingsDisplayLazyRoute
   '/settings/notifications': typeof AuthenticatedSettingsNotificationsLazyRoute
+  '/aggrid': typeof AuthenticatedAggridIndexLazyRoute
   '/apps': typeof AuthenticatedAppsIndexLazyRoute
   '/chats': typeof AuthenticatedChatsIndexLazyRoute
   '/help-center': typeof AuthenticatedHelpCenterIndexLazyRoute
   '/settings': typeof AuthenticatedSettingsIndexLazyRoute
   '/tasks': typeof AuthenticatedTasksIndexLazyRoute
   '/users': typeof AuthenticatedUsersIndexLazyRoute
+  '/aggrid/chart': typeof AuthenticatedAggridChartIndexLazyRoute
+  '/aggrid/grid': typeof AuthenticatedAggridGridIndexLazyRoute
 }
 
 export interface FileRoutesById {
@@ -569,12 +643,15 @@ export interface FileRoutesById {
   '/_authenticated/settings/appearance': typeof AuthenticatedSettingsAppearanceLazyRoute
   '/_authenticated/settings/display': typeof AuthenticatedSettingsDisplayLazyRoute
   '/_authenticated/settings/notifications': typeof AuthenticatedSettingsNotificationsLazyRoute
+  '/_authenticated/aggrid/': typeof AuthenticatedAggridIndexLazyRoute
   '/_authenticated/apps/': typeof AuthenticatedAppsIndexLazyRoute
   '/_authenticated/chats/': typeof AuthenticatedChatsIndexLazyRoute
   '/_authenticated/help-center/': typeof AuthenticatedHelpCenterIndexLazyRoute
   '/_authenticated/settings/': typeof AuthenticatedSettingsIndexLazyRoute
   '/_authenticated/tasks/': typeof AuthenticatedTasksIndexLazyRoute
   '/_authenticated/users/': typeof AuthenticatedUsersIndexLazyRoute
+  '/_authenticated/aggrid/chart/': typeof AuthenticatedAggridChartIndexLazyRoute
+  '/_authenticated/aggrid/grid/': typeof AuthenticatedAggridGridIndexLazyRoute
 }
 
 export interface FileRouteTypes {
@@ -597,12 +674,15 @@ export interface FileRouteTypes {
     | '/settings/appearance'
     | '/settings/display'
     | '/settings/notifications'
+    | '/aggrid'
     | '/apps'
     | '/chats'
     | '/help-center'
     | '/settings/'
     | '/tasks'
     | '/users'
+    | '/aggrid/chart'
+    | '/aggrid/grid'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/500'
@@ -620,12 +700,15 @@ export interface FileRouteTypes {
     | '/settings/appearance'
     | '/settings/display'
     | '/settings/notifications'
+    | '/aggrid'
     | '/apps'
     | '/chats'
     | '/help-center'
     | '/settings'
     | '/tasks'
     | '/users'
+    | '/aggrid/chart'
+    | '/aggrid/grid'
   id:
     | '__root__'
     | '/_authenticated'
@@ -646,12 +729,15 @@ export interface FileRouteTypes {
     | '/_authenticated/settings/appearance'
     | '/_authenticated/settings/display'
     | '/_authenticated/settings/notifications'
+    | '/_authenticated/aggrid/'
     | '/_authenticated/apps/'
     | '/_authenticated/chats/'
     | '/_authenticated/help-center/'
     | '/_authenticated/settings/'
     | '/_authenticated/tasks/'
     | '/_authenticated/users/'
+    | '/_authenticated/aggrid/chart/'
+    | '/_authenticated/aggrid/grid/'
   fileRoutesById: FileRoutesById
 }
 
@@ -714,11 +800,14 @@ export const routeTree = rootRoute
       "children": [
         "/_authenticated/settings",
         "/_authenticated/",
+        "/_authenticated/aggrid/",
         "/_authenticated/apps/",
         "/_authenticated/chats/",
         "/_authenticated/help-center/",
         "/_authenticated/tasks/",
-        "/_authenticated/users/"
+        "/_authenticated/users/",
+        "/_authenticated/aggrid/chart/",
+        "/_authenticated/aggrid/grid/"
       ]
     },
     "/(auth)/500": {
@@ -785,6 +874,10 @@ export const routeTree = rootRoute
       "filePath": "_authenticated/settings/notifications.lazy.tsx",
       "parent": "/_authenticated/settings"
     },
+    "/_authenticated/aggrid/": {
+      "filePath": "_authenticated/aggrid/index.lazy.tsx",
+      "parent": "/_authenticated"
+    },
     "/_authenticated/apps/": {
       "filePath": "_authenticated/apps/index.lazy.tsx",
       "parent": "/_authenticated"
@@ -807,6 +900,14 @@ export const routeTree = rootRoute
     },
     "/_authenticated/users/": {
       "filePath": "_authenticated/users/index.lazy.tsx",
+      "parent": "/_authenticated"
+    },
+    "/_authenticated/aggrid/chart/": {
+      "filePath": "_authenticated/aggrid/chart/index.lazy.tsx",
+      "parent": "/_authenticated"
+    },
+    "/_authenticated/aggrid/grid/": {
+      "filePath": "_authenticated/aggrid/grid/index.lazy.tsx",
       "parent": "/_authenticated"
     }
   }

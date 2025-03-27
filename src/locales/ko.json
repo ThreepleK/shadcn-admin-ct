@@ -14,7 +14,8 @@
             "Auth": "인증",
             "Errors": "에러",
             "Settings": "설정",
-            "Help Center": "도움말"
+            "Help Center": "도움말",
+            "AG Grid": "AG Grid"
         },
         "SubItems": {
             "Sign In": "로그인",
@@ -31,7 +32,9 @@
             "Account": "계정",
             "Appearance": "상태",
             "Notifications": "알림",
-            "Display": "디스플레이"
+            "Display": "디스플레이",
+            "Grid": "그리드",
+            "Chart": "차트"
         }
     }
 }

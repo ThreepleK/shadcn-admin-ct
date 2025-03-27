@@ -18,6 +18,9 @@ import {
   IconUserCog,
   IconUserOff,
   IconUsers,
+  IconGridPattern,
+  IconTableRow,
+  IconChartHistogram,
 } from '@tabler/icons-react'
 import { AudioWaveform, Command, GalleryVerticalEnd } from 'lucide-react'
 import { type SidebarData } from '../types'
@@ -134,6 +137,22 @@ export const sidebarData: SidebarData = {
               title: 'Maintenance Error',
               url: '/503',
               icon: IconBarrierBlock,
+            },
+          ],
+        },
+        {
+          title: 'AG Grid',
+          icon: IconGridPattern,
+          items: [
+            {
+              title: 'Grid',
+              url: '/aggrid/grid',
+              icon: IconTableRow,
+            },
+            {
+              title: 'Chart',
+              url: '/aggrid/chart',
+              icon: IconChartHistogram,
             },
           ],
         },

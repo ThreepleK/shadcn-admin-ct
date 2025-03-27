@@ -14,7 +14,8 @@
             "Auth": "Auth",
             "Errors": "Errors",
             "Settings": "Settings",
-            "Help Center": "Help Center"
+            "Help Center": "Help Center",
+            "AG Grid": "AG Grid"
         },
         "SubItems": {
             "Sign In": "Sign In",
@@ -31,7 +32,9 @@
             "Account": "Account",
             "Appearance": "Appearance",
             "Notifications": "Notifications",
-            "Display": "Display"
+            "Display": "Display",
+            "Grid": "Grid",
+            "Chart": "Chart"
         }
     }
 }
