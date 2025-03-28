@@ -1,0 +1,87 @@
+{
+    "TASK": {
+        "Header": {
+            "Task": "업무",
+            "description": "이번 달의 업무 목록은 다음과 같습니다!",
+            "Import": "가져오기",
+            "Create": "만들기"
+        },
+        "GridItem": {
+            "Filter tasks": "업무 목록 필터링",
+            "Status": "상태",
+            "Priority": "우선순위",
+            "Reset": "초기화",
+            "View": "보기"
+        },
+        "Dropdown": {
+            "Status": "상태",
+            "Backlog": "대기 목록",
+            "Todo": "할 일",
+            "In Progress": "진행 중",
+            "Done": "완료됨",
+            "Canceled": "취소됨",
+            "Priority": "우선순위",
+            "Low": "낮음",
+            "Medium": "중간",
+            "High": "높음",
+            "Clear filters": "필터 해제",
+            "Toggle columns": "컬럼 토글",
+            "Title": "제목",
+            "Edit": "수정",
+            "Make a copy": "복제",
+            "Favorite": "즐겨찾기",
+            "Labels": "라벨",
+            "Bug": "버그",
+            "Feature": "기능",
+            "Documentation": "문서",
+            "Delete": "삭제",
+            "Asc": "오름차순",
+            "Desc": "내림차순",
+            "Hide": "숨기기",
+            "n selected": "{{num}}개 선택"
+        },
+        "GridColumn": {
+            "task": "작업",
+            "title": "제목",
+            "status": "상태",
+            "priority": "우선순위"
+        },
+        "Pagenation": {
+            "rows(s) selected": "{{total}}개 행, {{selected}}개 선택됨",
+            "Rows per page": "페이지당 행 수",
+            "Page n of t": "{{current}} / {{total}}"
+        },
+        "TaskDialog": {
+            "Create Task": "업무 생성",
+            "Update Task": "업무 수정",
+            "Create description": "필요한 정보를 입력하여 새 작업을 추가하세요. 완료되면 저장을 클릭하세요.",
+            "Update description": "필요한 정보를 입력하여 작업을 업데이트하세요. 완료되면 저장을 클릭하세요.",
+            "Title": "제목",
+            "Enter a title": "제목을 입력하세요",
+            "Status": "상태",
+            "Select dropdown": "드롭다운을 선택하세요",
+            "Label": "라벨",
+            "Priority": "우선순위",
+            "Close": "닫기",
+            "Save changes": "저장하기",
+            "Title is required": "제목을 입력해 주세요.",
+            "Please select a status": "상태를 선택해 주세요.",
+            "Please select a label": "라벨을 선택해 주세요.",
+            "Please choose a priority": "우선순위를 선택해 주세요.",
+            "You submitted the following values": "다음과 같은 값을 제출하였습니다:",
+            "Delete this task id": "이 '{{id}}'를 삭제하시겠습니까?",
+            "Delete task description": "<strong>{{id}}</strong> 업무를 삭제하려고 합니다. 이 작업은 되돌릴 수 없습니다.",
+            "The following task has been deleted": "다음 작업이 삭제되었습니다."
+        },
+        "TaskImport": {
+            "Import Tasks": "업무 가져오기",
+            "Import tasks quickly from a CSV file": "CSV 파일에서 작업을 빠르게 가져오세요.",
+            "File": "파일",
+            "Close": "닫기",
+            "Import": "가져오기",
+            "You have imported the following file": "다음 파일을 가져왔습니다.",
+            "Please upload a file": "파일을 업로드해 주세요.",
+            "Please upload csv format": "CSV 형식으로 업로드해 주세요."
+        }
+    }
+}

@@ -5,6 +5,7 @@ import { labels, priorities, statuses } from '../data/data'
 import { Task } from '../data/schema'
 import { DataTableColumnHeader } from './data-table-column-header'
 import { DataTableRowActions } from './data-table-row-actions'
+import { useTranslation } from 'react-i18next'
 
 export const columns: ColumnDef<Task>[] = [
   {
@@ -34,7 +35,7 @@ export const columns: ColumnDef<Task>[] = [
   {
     accessorKey: 'id',
     header: ({ column }) => (
-      <DataTableColumnHeader column={column} title='Task' />
+      <DataTableColumnHeader column={column} title='task' />
     ),
     cell: ({ row }) => <div className='w-[80px]'>{row.getValue('id')}</div>,
     enableSorting: false,
@@ -43,14 +44,15 @@ export const columns: ColumnDef<Task>[] = [
   {
     accessorKey: 'title',
     header: ({ column }) => (
-      <DataTableColumnHeader column={column} title='Title' />
+      <DataTableColumnHeader column={column} title='title' />
     ),
     cell: ({ row }) => {
+      const { t } = useTranslation();
       const label = labels.find((label) => label.value === row.original.label)
 
       return (
         <div className='flex space-x-2'>
-          {label && <Badge variant='outline'>{label.label}</Badge>}
+          {label && <Badge variant='outline'>{t(`TASK.Dropdown.${label.label}`)}</Badge>}
           <span className='max-w-32 truncate font-medium sm:max-w-72 md:max-w-[31rem]'>
             {row.getValue('title')}
           </span>
@@ -61,9 +63,10 @@ export const columns: ColumnDef<Task>[] = [
   {
     accessorKey: 'status',
     header: ({ column }) => (
-      <DataTableColumnHeader column={column} title='Status' />
+      <DataTableColumnHeader column={column} title='status' />
     ),
     cell: ({ row }) => {
+      const { t } = useTranslation();
       const status = statuses.find(
         (status) => status.value === row.getValue('status')
       )
@@ -77,7 +80,7 @@ export const columns: ColumnDef<Task>[] = [
           {status.icon && (
             <status.icon className='mr-2 h-4 w-4 text-muted-foreground' />
           )}
-          <span>{status.label}</span>
+          <span>{t(`TASK.Dropdown.${status.label}`)}</span>
         </div>
       )
     },
@@ -88,9 +91,10 @@ export const columns: ColumnDef<Task>[] = [
   {
     accessorKey: 'priority',
     header: ({ column }) => (
-      <DataTableColumnHeader column={column} title='Priority' />
+      <DataTableColumnHeader column={column} title='priority' />
     ),
     cell: ({ row }) => {
+      const { t } = useTranslation();
       const priority = priorities.find(
         (priority) => priority.value === row.getValue('priority')
       )
@@ -104,7 +108,7 @@ export const columns: ColumnDef<Task>[] = [
           {priority.icon && (
             <priority.icon className='mr-2 h-4 w-4 text-muted-foreground' />
           )}
-          <span>{priority.label}</span>
+          <span>{t(`TASK.Dropdown.${priority.label}`)}</span>
         </div>
       )
     },

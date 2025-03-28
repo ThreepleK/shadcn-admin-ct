@@ -6,17 +6,20 @@ import { TasksDialogs } from './components/tasks-dialogs'
 import { TasksPrimaryButtons } from './components/tasks-primary-buttons'
 import TasksProvider from './context/tasks-context'
 import { tasks } from './data/tasks'
+import { useTranslation } from 'react-i18next'
 
 export default function Tasks() {
+  const { t } = useTranslation();
+
   return (
     <TasksProvider>
       {/* <Header fixed></Header> */}
       <Main fixed>
         <div className='mb-2 flex flex-wrap items-center justify-between gap-x-4 space-y-2'>
           <div>
-            <h2 className='text-2xl font-bold tracking-tight'>Tasks</h2>
+            <h2 className='text-2xl font-bold tracking-tight'>{t('TASK.Header.Task')}</h2>
             <p className='text-muted-foreground'>
-              Here&apos;s a list of your tasks for this month!
+              {t('TASK.Header.description')}
             </p>
           </div>
           <TasksPrimaryButtons />

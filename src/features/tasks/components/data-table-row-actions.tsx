@@ -18,6 +18,7 @@ import {
 import { useTasks } from '../context/tasks-context'
 import { labels } from '../data/data'
 import { taskSchema } from '../data/schema'
+import { useTranslation } from 'react-i18next'
 
 interface DataTableRowActionsProps<TData> {
   row: Row<TData>
@@ -29,6 +30,7 @@ export function DataTableRowActions<TData>({
   const task = taskSchema.parse(row.original)
 
   const { setOpen, setCurrentRow } = useTasks()
+  const { t } = useTranslation();
 
   return (
     <DropdownMenu modal={false}>
@@ -48,18 +50,19 @@ export function DataTableRowActions<TData>({
             setOpen('update')
           }}
         >
-          Edit
+          {t('TASK.Dropdown.Edit')}
         </DropdownMenuItem>
-        <DropdownMenuItem disabled>Make a copy</DropdownMenuItem>
-        <DropdownMenuItem disabled>Favorite</DropdownMenuItem>
+        <DropdownMenuItem disabled>{t('TASK.Dropdown.Make a copy')}</DropdownMenuItem>
+        <DropdownMenuItem disabled>{t('TASK.Dropdown.Favorite')}</DropdownMenuItem>
         <DropdownMenuSeparator />
         <DropdownMenuSub>
-          <DropdownMenuSubTrigger>Labels</DropdownMenuSubTrigger>
+          <DropdownMenuSubTrigger>{t('TASK.Dropdown.Labels')}</DropdownMenuSubTrigger>
           <DropdownMenuSubContent>
             <DropdownMenuRadioGroup value={task.label}>
               {labels.map((label) => (
                 <DropdownMenuRadioItem key={label.value} value={label.value}>
-                  {label.label}
+                  
+                  {t(`TASK.Dropdown.${label.label}`)}
                 </DropdownMenuRadioItem>
               ))}
             </DropdownMenuRadioGroup>
@@ -72,7 +75,7 @@ export function DataTableRowActions<TData>({
             setOpen('delete')
           }}
         >
-          Delete
+          {t('TASK.Dropdown.Delete')}
           <DropdownMenuShortcut>
             <IconTrash size={16} />
           </DropdownMenuShortcut>

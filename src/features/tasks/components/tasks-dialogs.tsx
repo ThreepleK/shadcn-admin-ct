@@ -3,8 +3,10 @@ import { ConfirmDialog } from '@/components/confirm-dialog'
 import { useTasks } from '../context/tasks-context'
 import { TasksImportDialog } from './tasks-import-dialog'
 import { TasksMutateDrawer } from './tasks-mutate-drawer'
+import { useTranslation } from 'react-i18next'
 
 export function TasksDialogs() {
+  const { t } = useTranslation();
   const { open, setOpen, currentRow, setCurrentRow } = useTasks()
   return (
     <>
@@ -50,7 +52,7 @@ export function TasksDialogs() {
                 setCurrentRow(null)
               }, 500)
               toast({
-                title: 'The following task has been deleted:',
+                title: t('TASK.TaskDialog.The following task has been deleted'),
                 description: (
                   <pre className='mt-2 w-[340px] rounded-md bg-slate-950 p-4'>
                     <code className='text-white'>
@@ -61,13 +63,11 @@ export function TasksDialogs() {
               })
             }}
             className='max-w-md'
-            title={`Delete this task: ${currentRow.id} ?`}
+            title={t('TASK.TaskDialog.Delete this task id', {id: currentRow.id})}
             desc={
-              <>
-                You are about to delete a task with the ID{' '}
-                <strong>{currentRow.id}</strong>. <br />
-                This action cannot be undone.
-              </>
+              <span dangerouslySetInnerHTML={{
+                __html: t('TASK.TaskDialog.Delete task description', {id: currentRow.id})
+              }}></span>
             }
             confirmText='Delete'
           />

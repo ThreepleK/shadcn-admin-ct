@@ -21,18 +21,7 @@ import {
   FormMessage,
 } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
-
-const formSchema = z.object({
-  file: z
-    .instanceof(FileList)
-    .refine((files) => files.length > 0, {
-      message: 'Please upload a file',
-    })
-    .refine(
-      (files) => ['text/csv'].includes(files?.[0]?.type),
-      'Please upload csv format.'
-    ),
-})
+import { useTranslation } from 'react-i18next'
 
 interface Props {
   open: boolean
@@ -40,6 +29,20 @@ interface Props {
 }
 
 export function TasksImportDialog({ open, onOpenChange }: Props) {
+  const { t } = useTranslation();
+
+  const formSchema = z.object({
+    file: z
+      .instanceof(FileList)
+      .refine((files) => files.length > 0, {
+        message: t('TASK.TaskImport.Please upload a file'),
+      })
+      .refine(
+        (files) => ['text/csv'].includes(files?.[0]?.type),
+        t('TASK.TaskImport.Please upload csv format')
+      ),
+  })
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: { file: undefined },
@@ -57,7 +60,7 @@ export function TasksImportDialog({ open, onOpenChange }: Props) {
         type: file[0].type,
       }
       toast({
-        title: 'You have imported the following file:',
+        title: t('TASK.TaskImport.You have imported the following file'),
         description: (
           <pre className='mt-2 w-[340px] rounded-md bg-slate-950 p-4'>
             <code className='text-white'>
@@ -80,9 +83,9 @@ export function TasksImportDialog({ open, onOpenChange }: Props) {
     >
       <DialogContent className='gap-2 sm:max-w-sm'>
         <DialogHeader className='text-left'>
-          <DialogTitle>Import Tasks</DialogTitle>
+          <DialogTitle>{t('TASK.TaskImport.Import Tasks')}</DialogTitle>
           <DialogDescription>
-            Import tasks quickly from a CSV file.
+            {t('TASK.TaskImport.Import tasks quickly from a CSV file')}
           </DialogDescription>
         </DialogHeader>
         <Form {...form}>
@@ -92,7 +95,7 @@ export function TasksImportDialog({ open, onOpenChange }: Props) {
               name='file'
               render={() => (
                 <FormItem className='mb-2 space-y-1'>
-                  <FormLabel>File</FormLabel>
+                  <FormLabel>{t('TASK.TaskImport.File')}</FormLabel>
                   <FormControl>
                     <Input type='file' {...fileRef} className='h-8' />
                   </FormControl>
@@ -104,10 +107,10 @@ export function TasksImportDialog({ open, onOpenChange }: Props) {
         </Form>
         <DialogFooter className='gap-2 sm:gap-0'>
           <DialogClose asChild>
-            <Button variant='outline'>Close</Button>
+            <Button variant='outline'>{t('TASK.TaskImport.Close')}</Button>
           </DialogClose>
           <Button type='submit' form='task-import-form'>
-            Import
+            {t('TASK.TaskImport.Import')}
           </Button>
         </DialogFooter>
       </DialogContent>

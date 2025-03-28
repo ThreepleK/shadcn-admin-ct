@@ -1,0 +1,87 @@
+{
+    "TASK": {
+        "Header": {
+            "Task": "Task",
+            "description": "Here's a list of your tasks for this month!",
+            "Import": "Import",
+            "Create": "Create"
+        },
+        "GridItem": {
+            "Filter tasks": "Filter tasks...",
+            "Status": "Status",
+            "Priority": "Priority",
+            "Reset": "Reset",
+            "View": "View"
+        },
+        "Dropdown": {
+            "Status": "Status",
+            "Backlog": "Backlog",
+            "Todo": "Todo",
+            "In Progress": "In Progress",
+            "Done": "Done",
+            "Canceled": "Canceled",
+            "Priority": "Priority",
+            "Low": "Low",
+            "Medium": "Medium",
+            "High": "High",
+            "Clear filters": "Clear filters",
+            "Toggle columns": "Toggle columns",
+            "Title": "Title",
+            "Edit": "Edit",
+            "Make a copy": "Make a copy",
+            "Favorite": "Favorite",
+            "Labels": "Labels",
+            "Bug": "Bug",
+            "Feature": "Feature",
+            "Documentation": "Documentation",
+            "Delete": "Delete",
+            "Asc": "Asc",
+            "Desc": "Desc",
+            "Hide": "Hide",
+            "n selected": "{{num}} selected"
+        },
+        "GridColumn": {
+            "task": "Task",
+            "title": "Title",
+            "status": "Status",
+            "priority": "Priority"
+        },
+        "Pagenation": {
+            "rows(s) selected": "{{selected}} rows(s) {{total}} selected",
+            "Rows per page": "Rows per page",
+            "Page n of t": "Page {{current}} of {{total}}"
+        },
+        "TaskDialog": {
+            "Create Task": "Create Task",
+            "Update Task": "Update Task",
+            "Create description": "Add a new task by providing necessary info. Click save when you're done.",
+            "Update description": "Update the task by providing necessary info. Click save when you're done.",
+            "Title": "Title",
+            "Enter a title": "Enter a title",
+            "Status": "Status",
+            "Select dropdown": "Select dropdown",
+            "Label": "Label",
+            "Priority": "Priority",
+            "Close": "Close",
+            "Save changes": "Save changes",
+            "Title is required": "Title is required.",
+            "Please select a status": "Please select a status.",
+            "Please select a label": "Please select a label.",
+            "Please choose a priority": "Please choose a priority.",
+            "You submitted the following values": "You submitted the following values:",
+            "Delete this task id": "Delete this task: {{id}}",
+            "Delete task description": "You are about to delete a task with the ID <strong>{{id}}</strong> This action cannot be undone.",
+            "The following task has been deleted": "The following task has been deleted:"
+        },
+        "TaskImport": {
+            "Import Tasks": "Import Tasks",
+            "Import tasks quickly from a CSV file": "Import tasks quickly from a CSV file.",
+            "File": "File",
+            "Close": "Close",
+            "Import": "Import",
+            "You have imported the following file": "You have imported the following file",
+            "Please upload a file": "Please upload a file",
+            "Please upload csv format": "Please upload csv format."
+        }
+    }
+}
