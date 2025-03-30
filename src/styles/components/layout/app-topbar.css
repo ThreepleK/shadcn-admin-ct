@@ -22,7 +22,7 @@
     /* 슬라이드 접힘 시 */
     &[data-state="collapsed"] {
         & {
-            --fold-w: calc(var(--sidebar-width-icon) + 16px);
+            --fold-w: calc(var(--sidebar-width-icon) + 0px);
             @apply grid-cols-[var(--fold-w)_1fr] overflow-hidden;
         }
     }

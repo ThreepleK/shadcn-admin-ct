@@ -11,12 +11,13 @@ export function AppTopbar({...props}: React.ComponentProps<any>){
     const {state} = useSidebar();
 
     const logo = state === 'collapsed' ? img_logoMini : img_logoFull;
-    const imgSize = state === 'collapsed' ? 22 : 115;
+    const imgSize = state === 'collapsed' ? 12 : 115;
+    const logoArea = state === 'collapsed' ? 'justify-start pl-5' : 'justify-center';
 
     return <>
         <div className='app-topbar' data-state={state}>
-            <div className="flex items-center justify-center">
-                <span className={`inline-flex w-[${imgSize}px] whitespace-nowrap`}><img src={logo} /></span>
+            <div className={`flex items-center ${logoArea}`}>
+                <span className={`inline-flex whitespace-nowrap`}><img src={logo} style={{width: `${imgSize}px`}} /></span>
             </div>
             <div className="flex items-center justify-between px-4">
                 <SidebarTrigger variant='outline' className='scale-125 sm:scale-100' />
