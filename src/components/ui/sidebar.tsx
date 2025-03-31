@@ -21,6 +21,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from '@/components/ui/tooltip'
+import { IconLayoutSidebarLeftExpandFilled, IconLayoutSidebarRightExpandFilled, IconMenuDeep } from '@tabler/icons-react'
 
 export const SIDEBAR_COOKIE_NAME = 'sidebar:state'
 export const SIDEBAR_COOKIE_MAX_AGE = 60 * 60 * 24 * 7
@@ -287,7 +288,7 @@ const SidebarTrigger = React.forwardRef<
       }}
       {...props}
     >
-      <PanelLeft />
+      <IconMenuDeep />
       <span className='sr-only'>Toggle Sidebar</span>
     </Button>
   )
