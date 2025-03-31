@@ -31,23 +31,19 @@ export const sidebarData: SidebarData = {
     email: 'satnaingdev@gmail.com',
     avatar: '/avatars/shadcn.jpg',
   },
-  teams: [
-    {
-      name: 'Shadcn Admin',
-      logo: Command,
-      plan: 'Vite + ShadcnUI',
-    },
-    {
-      name: 'Acme Inc',
-      logo: GalleryVerticalEnd,
-      plan: 'Enterprise',
-    },
-    {
-      name: 'Acme Corp.',
-      logo: AudioWaveform,
-      plan: 'Startup',
-    },
-  ],
+  orgList: [{
+    name: 'Org A',
+    logo: Command,
+    plan: 'Description 1',
+  }, {
+    name: 'Org B',
+    logo: GalleryVerticalEnd,
+    plan: 'Description 2',
+  }, {
+    name: 'Org C',
+    logo: AudioWaveform,
+    plan: 'Description 3',
+  }],
   navGroups: [
     {
       title: 'General',

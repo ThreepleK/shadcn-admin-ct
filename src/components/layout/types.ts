@@ -6,7 +6,7 @@ interface User {
   avatar: string
 }
 
-interface Team {
+interface OrgInfo {
   name: string
   logo: React.ElementType
   plan: string
@@ -37,7 +37,7 @@ interface NavGroup {
 
 interface SidebarData {
   user: User
-  teams: Team[]
+  orgList: OrgInfo[]
   navGroups: NavGroup[]
 }
 

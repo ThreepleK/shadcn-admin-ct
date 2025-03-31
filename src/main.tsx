@@ -34,8 +34,8 @@ const queryClient = new QueryClient({
           [401, 403].includes(error.response?.status ?? 0)
         )
       },
-      refetchOnWindowFocus: import.meta.env.PROD,
-      staleTime: 10 * 1000, // 10s
+      refetchOnWindowFocus: import.meta.env.PROD,   // PROD일 때 창이 포커스를 얻으면 자동으로 데이터를 다시 가져옴
+      staleTime: 10 * 1000, // 10초간 캐시 데이터 사용
     },
     mutations: {
       onError: (error) => {
