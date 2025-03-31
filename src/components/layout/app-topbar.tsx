@@ -6,6 +6,7 @@ import { ProfileDropdown } from '@/components/profile-dropdown'
 
 import img_logoFull from '@/assets/logo.png'
 import img_logoMini from '@/assets/logo-mini.png'
+import { AppsSwitch } from '../apps-switch'
 
 export function AppTopbar({...props}: React.ComponentProps<any>){
     const {state} = useSidebar();
@@ -22,6 +23,7 @@ export function AppTopbar({...props}: React.ComponentProps<any>){
             <div className="flex items-center justify-between px-4">
                 <SidebarTrigger variant='outline' className='scale-125 sm:scale-100' />
                 <div className='ml-auto flex items-center space-x-2'>
+                    <AppsSwitch />
                     <Search />
                     <ThemeSwitch />
                     <LocationSwitch />
