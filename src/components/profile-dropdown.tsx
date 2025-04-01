@@ -9,8 +9,12 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuShortcut,
+  DropdownMenuSub,
+  DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
+import { ThemeSwitchSubContent } from './theme-switch-content'
+import { LocationSwitchSubContent } from './location-switch-content'
 
 export function ProfileDropdown() {
   return (
@@ -55,6 +59,17 @@ export function ProfileDropdown() {
           <DropdownMenuItem>New Team</DropdownMenuItem>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
+        <DropdownMenuGroup>
+          <DropdownMenuSub>
+            <DropdownMenuSubTrigger>Theme</DropdownMenuSubTrigger>
+            <ThemeSwitchSubContent />
+          </DropdownMenuSub>
+          <DropdownMenuSub>
+            <DropdownMenuSubTrigger>Location</DropdownMenuSubTrigger>
+            <LocationSwitchSubContent />
+          </DropdownMenuSub>
+      </DropdownMenuGroup>
+      <DropdownMenuSeparator />
         <DropdownMenuItem>
           Log out
           <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>

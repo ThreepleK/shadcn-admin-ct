@@ -24,9 +24,6 @@ export function AppTopbar({...props}: React.ComponentProps<any>){
                 <SidebarTrigger variant='outline' className='scale-125 sm:scale-100' />
                 <div className='ml-auto flex items-center space-x-2'>
                     <AppsSwitch />
-                    <Search />
-                    <ThemeSwitch />
-                    <LocationSwitch />
                     <ProfileDropdown />
                 </div>
             </div>
